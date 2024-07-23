@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja - Sobre Nós</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sua Loja</h1>
+        <p>Sobre Nós</p>
+    </header>
+    <div class="carousel">
+        <img src="images/imagem1.jpg" alt="Imagem da Loja 1">
+        <img src="images/imagem2.jpg" alt="Imagem da Loja 2">
+        <img src="images/imagem3.jpg" alt="Imagem da Loja 3">
+    </div>
+    <div class="content">
+        <h2 class="section-title">Missão</h2>
+        <p class="mission">Nossa missão é...</p>
+        <h2 class="section-title">Visão</h2>
+        <p class="vision">Nossa visão é...</p>
+        <h2 class="section-title">Valores</h2>
+        <p class="values">Nossos valores são...</p>
+        <h2 class="section-title">Nossa História</h2>
+        <p class="history">A história da nossa loja começou...</p>
+        <h2 class="section-title">Contato</h2>
+        <form>
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <footer>
+        <p>© 2024 Sua Loja. Todos os direitos reservados.</p>
+        <p>
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://instagram.com">Instagram</a> |
+            <a href="https://twitter.com">Twitter</a>
+        </p>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.carousel img');
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % images.length;
+            showSlide(currentSlide);
+        }
+        setInterval(nextSlide, 3000);
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
